@@ -1,8 +1,4 @@
 import Head from "next/head";
-import SideNav from "../components/SideNav";
-
-import Link from "next/link";
-import Image from "next/image";
 
 export default function IndexPage() {
   return (
@@ -12,6 +8,14 @@ export default function IndexPage() {
         <meta name="description" content="Volcanic CMS user guide" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main>
+        <h1 className="text-2xl sm:text-2xl font-extrabold text-slate-900 tracking-tight ">
+          Welcome to the Volcanic CMS guide!
+        </h1>
+        <p className="mt-4 text-lg text-slate-700">
+          Please use the navigation bar to get started.
+        </p>
+      </main>
     </>
   );
 }

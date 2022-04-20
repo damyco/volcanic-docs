@@ -1,6 +1,4 @@
-import React from "react";
 import { useRouter } from "next/router";
-
 import Link from "next/link";
 
 export default function SideNav() {
@@ -52,10 +50,10 @@ export default function SideNav() {
             </h5>
             <ul className="space-y-6 lg:space-y-2 border-l border-slate-100 ">
               <li>
-                <Link href="/notification">
+                <Link href="/notification-center">
                   <a
                     className={
-                      router.pathname == "/notification"
+                      router.pathname == "/notification-center"
                         ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
                         : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
                     }
@@ -91,10 +89,10 @@ export default function SideNav() {
                 </Link>
               </li>
               <li>
-                <Link href="/job-alerts">
+                <Link href="/job-search">
                   <a
                     className={
-                      router.pathname == "/job-alerts"
+                      router.pathname == "/job-search"
                         ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
                         : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
                     }
@@ -102,12 +100,12 @@ export default function SideNav() {
                     Job Search
                   </a>
                 </Link>
-              </li>{" "}
+              </li>
               <li>
-                <Link href="/job-alerts">
+                <Link href="/forms">
                   <a
                     className={
-                      router.pathname == "/job-alerts"
+                      router.pathname == "/forms"
                         ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
                         : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
                     }
@@ -115,17 +113,205 @@ export default function SideNav() {
                     Forms
                   </a>
                 </Link>
-              </li>{" "}
+              </li>
               <li>
-                <Link href="/job-alerts">
+                <Link href="/navigation">
                   <a
                     className={
-                      router.pathname == "/job-alerts"
+                      router.pathname == "/navigation"
                         ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
                         : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
                     }
                   >
                     Navigation
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li className="mt-12 lg:mt-8">
+            <h5 className="mb-8 lg:mb-3 font-semibold text-slate-900 ">
+              ⚙️ Settings - Reference Data
+            </h5>
+            <ul className="space-y-6 lg:space-y-2 border-l border-slate-100 ">
+              <li>
+                <Link href="/disciplines">
+                  <a
+                    className={
+                      router.pathname == "/disciplines"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Disciplines
+                  </a>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/job-functions">
+                  <a
+                    className={
+                      router.pathname == "/job-functions"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Job Functions
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/job-types">
+                  <a
+                    className={
+                      router.pathname == "/job-types"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Job Types
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/salaries">
+                  <a
+                    className={
+                      router.pathname == "/salaries"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Salaries
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/currencies">
+                  <a
+                    className={
+                      router.pathname == "/currencies"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Currencies
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li className="mt-12 lg:mt-8">
+            <h5 className="mb-8 lg:mb-3 font-semibold text-slate-900 ">
+              💻 Content
+            </h5>
+            <ul className="space-y-6 lg:space-y-2 border-l border-slate-100 ">
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Blogs
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Events
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Pages
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Clients
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Branches
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Consultants
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Testimonials
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/none"
+                        ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
+                        : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
+                    }
+                  >
+                    Tag manager
                   </a>
                 </Link>
               </li>

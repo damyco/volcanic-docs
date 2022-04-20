@@ -1,33 +1,32 @@
-export default function language() {
+export default function disciplines() {
   return (
     <>
       <header className="mb-10 md:flex md:items-start">
         <div className="flex-auto max-w-4xl">
           <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">
-            Setting language
+            Disciplines
           </p>
-
           <h1 className="text-2xl sm:text-2xl font-extrabold text-slate-900 tracking-tight ">
-            Setting the language
+            Mapping disciplines
           </h1>
           <p className="mt-4 text-lg text-slate-700">
-            • Go to Settings &gt; Languages
+            • Create nested discipline tree, base it off other sites.
           </p>
           <p className="mt-4 text-lg text-slate-700">
-            • Make sure setting the default language is one of the first things
-            you do, if you change the language later it will change the URL
-            structure.
+            • Must be added in default language and the other languages as well.
           </p>
           <p className="mt-4 text-lg text-slate-700">
-            • The default should be set to the specific country for example
-            Czech will be the default language for CZ site.
+            • Make sure the reference is exactly like on X3 and must match - it
+            is case sensitive and make sure there are no spaces in front or
+            after
           </p>
           <p className="mt-4 text-lg text-slate-700">
-            • Make sure you have secondary language as well, usually that will
-            be English (UK) - en
+            • Add hero image here on the backend (cannot be changed on the front
+            end)
           </p>
           <p className="mt-4 text-lg text-slate-700">
-            • add any other remaining languages if they are needed
+            • Discipline pages are not visible under content - pages section on
+            CMS.
           </p>
         </div>
       </header>

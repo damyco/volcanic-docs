@@ -1,33 +1,34 @@
-export default function language() {
+export default function notificationCenter() {
   return (
     <>
       <header className="mb-10 md:flex md:items-start">
         <div className="flex-auto max-w-4xl">
           <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">
-            Setting language
+            Notification Center
           </p>
 
           <h1 className="text-2xl sm:text-2xl font-extrabold text-slate-900 tracking-tight ">
-            Setting the language
+            Setting up Notifications
           </h1>
           <p className="mt-4 text-lg text-slate-700">
-            • Go to Settings &gt; Languages
+            • Go through all branded email notifications that are active and
+            check if everything is configured correctly.
+          </p>
+
+          <p className="mt-4 text-lg text-slate-700">
+            • Inactive notifications needs to be filled, only then they can
+            become active. You can edit them later from active tab.
           </p>
           <p className="mt-4 text-lg text-slate-700">
-            • Make sure setting the default language is one of the first things
-            you do, if you change the language later it will change the URL
-            structure.
+            • The emails (forms) coming with volcanic logo - the logo cannot be
+            changed.
           </p>
           <p className="mt-4 text-lg text-slate-700">
-            • The default should be set to the specific country for example
-            Czech will be the default language for CZ site.
+            • When creating new forms, new notification will appear.
           </p>
           <p className="mt-4 text-lg text-slate-700">
-            • Make sure you have secondary language as well, usually that will
-            be English (UK) - en
-          </p>
-          <p className="mt-4 text-lg text-slate-700">
-            • add any other remaining languages if they are needed
+            • Can set up email workflows (not currently used, but will be in the
+            future).
           </p>
         </div>
       </header>
