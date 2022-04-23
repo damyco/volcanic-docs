@@ -1,5 +1,3 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
 import PageHeader from "../components/PageHeader";
 
 const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
@@ -47,7 +45,6 @@ export async function getStaticPaths() {
     const navLinks = navGroups[0].listOfLinksCollection.items.map((item) => {
       return { params: { slug: item.slug } };
     });
-
     return {
       paths: navLinks,
       fallback: true,
@@ -124,10 +121,6 @@ export default function Content({ title, headerHeadline, headerBody }) {
         headerHeadline={headerHeadline}
         headerBody={headerBody}
       />
-
-      <div>
-        <p>{}</p>
-      </div>
     </main>
   );
 }

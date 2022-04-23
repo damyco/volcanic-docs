@@ -1,6 +1,9 @@
-import React from "react";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export default function PageHeader({ title, headerHeadline, headerBody }) {
+  if (!headerBody) {
+    return <div>loading...</div>;
+  }
   return (
     <>
       <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">
@@ -11,6 +14,7 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
       </h1>
       <div>
         <p>{headerBody.json.content[0].content[0].value}</p>
+        <p></p>
       </div>
     </>
   );
