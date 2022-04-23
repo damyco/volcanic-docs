@@ -61,7 +61,7 @@ export default function Layout({ children }) {
         <Header />
         <div className="overflow-hidden">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-            <div>Loading...</div>;
+            <div>Loading...</div>
             <div className="lg:pl-[19.5rem]">
               <main className="max-w-3xl mx-auto relative z-20 pt-10 xl:max-w-none">
                 <section className="mb-16 relative">{children}</section>
@@ -79,7 +79,7 @@ export default function Layout({ children }) {
         <Header />
         <div className="overflow-hidden">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-            <div>No data, please refresh the page to try again</div>;
+            <div>No data, please refresh the page to try again</div>
             <div className="lg:pl-[19.5rem]">
               <main className="max-w-3xl mx-auto relative z-20 pt-10 xl:max-w-none">
                 <section className="mb-16 relative">{children}</section>
