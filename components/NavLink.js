@@ -11,7 +11,7 @@ export default function NavLink({ data }) {
             <Link href={item.slug}>
               <a
                 className={
-                  router.pathname == item.slug
+                  router.asPath == item.slug
                     ? "block border-l pl-4 -ml-px text-sky-500 border-current font-semibold"
                     : "block border-l pl-4 -ml-px border-transparent hover:border-slate-400  text-slate-700 hover:text-slate-900"
                 }

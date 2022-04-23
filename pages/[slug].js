@@ -1,3 +1,7 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+import PageHeader from "../components/PageHeader";
+
 const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
@@ -69,6 +73,7 @@ export async function getStaticProps({ params }) {
         {
           pageCollection(limit: 1, where: { slug: "${params.slug}" }) {
             items {
+              title
               headerHeadline
               headerBody {
                 json
@@ -99,22 +104,30 @@ export async function getStaticProps({ params }) {
         notFound: true,
       };
     }
+
     return {
       props: data.pageCollection.items[0],
     };
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return {
       notFound: true,
     };
   }
 }
 
-export default function Content({ headerHeadline }) {
+export default function Content({ title, headerHeadline, headerBody }) {
   return (
     <main>
-      <h1>{headerHeadline}</h1>
-      <p></p>
+      <PageHeader
+        title={title}
+        headerHeadline={headerHeadline}
+        headerBody={headerBody}
+      />
+
+      <div>
+        <p>{}</p>
+      </div>
     </main>
   );
 }
