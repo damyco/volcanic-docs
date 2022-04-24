@@ -1,7 +1,6 @@
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
-import PageSection from "./PageSection";
 
 export default function PageHeader({ title, headerHeadline, headerBody }) {
   if (!headerBody) {
@@ -19,7 +18,7 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
             <Image
               key={img?.sys.id}
               src={img?.url}
-              alt={img?.title}
+              alt=""
               width={img?.width}
               height={img?.height}
               loading="lazy"

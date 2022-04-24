@@ -1,4 +1,5 @@
 import PageHeader from "../components/PageHeader";
+import PageSection from "../components/PageSection";
 
 const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
@@ -50,7 +51,6 @@ export async function getStaticPaths() {
       fallback: true,
     };
   } catch (error) {
-    console.error(error);
     return {
       notFound: true,
     };
@@ -87,12 +87,27 @@ export async function getStaticProps({ params }) {
                   }
                 }
               }
-              sectionsCollection {
+              sectionsCollection (limit: 30) {
                 items {
+                  sys {
+                    id
+                  }
                   heading
                   body {
                     json
-                  } 
+                    links {
+                      assets {
+                        block {
+                          url
+                          width
+                          height
+                          sys {
+                            id
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -118,14 +133,19 @@ export async function getStaticProps({ params }) {
       props: data.pageCollection.items[0],
     };
   } catch (error) {
-    console.error(error);
     return {
       notFound: true,
     };
   }
 }
 
-export default function Content({ title, headerHeadline, headerBody }) {
+export default function Content(props) {
+  const { title, headerHeadline, headerBody, sectionsCollection } = props;
+
+  if (!sectionsCollection) {
+    return <div> Loading...</div>;
+  }
+
   return (
     <main>
       <PageHeader
@@ -133,6 +153,16 @@ export default function Content({ title, headerHeadline, headerBody }) {
         headerHeadline={headerHeadline}
         headerBody={headerBody}
       />
+
+      {sectionsCollection.items.map((section) => {
+        return (
+          <PageSection
+            key={section.sys.id}
+            heading={section.heading}
+            body={section.body}
+          />
+        );
+      })}
     </main>
   );
 }
