@@ -1,9 +1,35 @@
+import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Image from "next/image";
+import PageSection from "./PageSection";
 
 export default function PageHeader({ title, headerHeadline, headerBody }) {
   if (!headerBody) {
     return <div>loading...</div>;
   }
+
+  const richTextOptions = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const img = headerBody.links.assets.block.find(
+          (i) => i.sys.id === node.data.target.sys.id
+        );
+        return (
+          <picture>
+            <Image
+              key={img?.sys.id}
+              src={img?.url}
+              alt={img?.title}
+              width={img?.width}
+              height={img?.height}
+              loading="lazy"
+            />
+          </picture>
+        );
+      },
+    },
+  };
+
   return (
     <>
       <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">
@@ -12,10 +38,7 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
       <h1 className="text-3xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
         {headerHeadline}
       </h1>
-      <div>
-        <p>{headerBody.json.content[0].content[0].value}</p>
-        <p></p>
-      </div>
+      <div>{documentToReactComponents(headerBody.json, richTextOptions)}</div>
     </>
   );
 }

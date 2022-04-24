@@ -74,6 +74,18 @@ export async function getStaticProps({ params }) {
               headerHeadline
               headerBody {
                 json
+                links {
+                  assets {
+                    block {
+                      url
+                      width
+                      height
+                      sys {
+                        id
+                      }
+                    }
+                  }
+                }
               }
               sectionsCollection {
                 items {
