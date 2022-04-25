@@ -142,10 +142,6 @@ export async function getStaticProps({ params }) {
 export default function Content(props) {
   const { title, headerHeadline, headerBody, sectionsCollection } = props;
 
-  if (!sectionsCollection) {
-    return <div> Loading...</div>;
-  }
-
   return (
     <main>
       <PageHeader
@@ -154,15 +150,18 @@ export default function Content(props) {
         headerBody={headerBody}
       />
 
-      {sectionsCollection.items.map((section) => {
-        return (
-          <PageSection
-            key={section.sys.id}
-            heading={section.heading}
-            body={section.body}
-          />
-        );
-      })}
+      {sectionsCollection
+        ? sectionsCollection.items.map((section) => {
+            return (
+              <PageSection
+                key={section.sys.id}
+                heading={section.heading}
+                body={section.body}
+              />
+            );
+          })
+        : null}
+      {}
     </main>
   );
 }

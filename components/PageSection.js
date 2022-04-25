@@ -3,10 +3,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Image from "next/image";
 
 export default function PageSection({ heading, body }) {
-  if (!body) {
-    return <div>loading...</div>;
-  }
-
   const richTextOptions = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -34,7 +30,9 @@ export default function PageSection({ heading, body }) {
       <h1 className="mt-8 text-3xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
         {heading}
       </h1>
-      <div>{documentToReactComponents(body.json, richTextOptions)}</div>
+      {body ? (
+        <div>{documentToReactComponents(body.json, richTextOptions)}</div>
+      ) : null}
     </>
   );
 }

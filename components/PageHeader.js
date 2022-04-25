@@ -3,10 +3,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Image from "next/image";
 
 export default function PageHeader({ title, headerHeadline, headerBody }) {
-  if (!headerBody) {
-    return <div>loading...</div>;
-  }
-
   const richTextOptions = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -37,7 +33,9 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
       <h1 className="text-3xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
         {headerHeadline}
       </h1>
-      <div>{documentToReactComponents(headerBody.json, richTextOptions)}</div>
+      {headerBody ? (
+        <div>{documentToReactComponents(headerBody.json, richTextOptions)}</div>
+      ) : null}
     </>
   );
 }
