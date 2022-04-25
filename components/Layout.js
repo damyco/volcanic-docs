@@ -95,10 +95,10 @@ export default function Layout({ children }) {
     <>
       <Header />
       <div className="overflow-hidden">
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="flex mx-auto px-4">
           <SideNav data={data} />
-          <div className="lg:pl-[19.5rem]">
-            <main className="max-w-3xl mx-auto relative z-20 pt-10 xl:max-w-none">
+          <div className="pl-[20rem]">
+            <main className="mx-auto relative z-20 pt-10 xl:max-w-none">
               <section className="mb-16 relative">{children}</section>
             </main>
           </div>
