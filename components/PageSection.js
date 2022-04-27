@@ -1,8 +1,6 @@
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { MARKS, BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
-import hljs from "highlight.js";
-import "highlight.js/styles/default.css";
 
 import Heading_1 from "./Heading_1";
 import Heading_2 from "./Heading_2";
@@ -17,6 +15,12 @@ import ListItem from "./ListItem";
 
 export default function PageSection({ heading, body }) {
   const richTextOptions = {
+    renderMark: {
+      [MARKS.CODE]: (node, children) => {
+        return <code className="text-cyan-900 dark:text-cyan-500">{node}</code>;
+      },
+    },
+
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const img = body.links.assets.block.find(
@@ -35,6 +39,10 @@ export default function PageSection({ heading, body }) {
           </picture>
         );
       },
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="mt-4">{children}</p>
+      ),
+
       [BLOCKS.HEADING_1]: (node, children) => <Heading_1>{children}</Heading_1>,
       [BLOCKS.HEADING_2]: (node, children) => <Heading_2>{children}</Heading_2>,
       [BLOCKS.HEADING_3]: (node, children) => <Heading_3>{children}</Heading_3>,

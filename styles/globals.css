@@ -37,3 +37,6 @@ a {
   color: #fff;
   background: #38bdf8;
 }
+p:empty {
+  display: none;
+}
