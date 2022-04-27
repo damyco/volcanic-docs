@@ -69,7 +69,9 @@ export default function PageSection({ heading, body }) {
       <Heading_2 text={heading} />
 
       {body ? (
-        <div>{documentToReactComponents(body.json, richTextOptions)}</div>
+        <div className="max-w-4xl">
+          {documentToReactComponents(body.json, richTextOptions)}
+        </div>
       ) : null}
     </>
   );
