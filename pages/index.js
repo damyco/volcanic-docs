@@ -5,7 +5,7 @@ export default function IndexPage() {
   return (
     <>
       <Head>
-        <title>Reed - Volcanic CMS user guide</title>
+        <title>Volcanic CMS user guide | Reed</title>
         <meta name="description" content="Volcanic CMS user guide" />
         <link rel="icon" href="/favicon.ico" />
         <link
