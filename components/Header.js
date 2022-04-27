@@ -7,7 +7,7 @@ const ThemeToggle = dynamic(() => import("../components/ThemeToggle"), {
 
 export default function Header() {
   return (
-    <div className="p-5 sticky top-0 z-40 border-b border-slate-900/10 dark:bg-black/50 dark:border-b dark:border-slate-700 w-full backdrop-blur  bg-white/50 supports-backdrop-blur:bg-white/90 ">
+    <div className="p-5 sticky top-0 z-40 border-b border-slate-900/10 dark:bg-gray-900/90 dark:border-b dark:border-slate-700 w-full backdrop-blur  bg-white/70 supports-backdrop-blur:bg-white/90 ">
       <div className="flex items-center ">
         <Link href="/">
           <a>

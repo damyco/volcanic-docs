@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Heading_1 from "../components/Heading_1";
 
 export default function IndexPage() {
   return (
@@ -6,7 +7,7 @@ export default function IndexPage() {
       <Head>
         <title>Reed - Volcanic CMS user guide</title>
         <meta name="description" content="Volcanic CMS user guide" />
-        <link rel="icon" type="image/png" href="/favicon-32x32.png" />
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="icon"
           type="image/png"
@@ -27,10 +28,9 @@ export default function IndexPage() {
         />
       </Head>
       <main>
-        <h1 className="text-2xl sm:text-2xl font-extrabold text-slate-900 tracking-tight ">
-          Welcome to the Volcanic CMS guide!
-        </h1>
-        <p className="mt-4 text-lg text-slate-700">
+        <Heading_1 text="Welcome to the Volcanic CMS guide!" />
+
+        <p className="mt-4 text-lg text-slate-200">
           Please use the navigation bar to get started.
         </p>
       </main>

@@ -94,11 +94,11 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <div className="overflow-hidden">
-        <div className="flex mx-auto px-4">
+      <div className="overflow-hidden dark:bg-gray-900 min-h-screen">
+        <div className="flex mx-auto px-4 ">
           <SideNav data={data} />
-          <div className="pl-[20rem]">
-            <main className="mx-auto relative z-20 pt-10 xl:max-w-none">
+          <div className="pl-[20rem] ">
+            <main className="mx-auto relative z-20 pt-10 xl:max-w-none ">
               <section className="mb-16 relative">{children}</section>
             </main>
           </div>

@@ -9,7 +9,7 @@ export default function SideNav({ data }) {
             return (
               <ul key={item.sys.id}>
                 <li className="mt-12 lg:mt-8">
-                  <h5 className="mb-8 lg:mb-3 font-semibold text-slate-900 ">
+                  <h5 className="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">
                     {item.title}
                   </h5>
                   <NavLink data={item.listOfLinksCollection} />

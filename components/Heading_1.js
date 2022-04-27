@@ -1,7 +1,7 @@
-export default function Heading_1({ children }) {
+export default function Heading_1({ children, text }) {
   return (
-    <h1 className="text-3xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-      {children}
+    <h1 className="mb-2 text-5xl font-extrabold text-slate-800 tracking-tight dark:text-slate-200">
+      {children || text}
     </h1>
   );
 }
