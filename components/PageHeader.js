@@ -30,12 +30,12 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
         );
       },
       [BLOCKS.HEADING_1]: (node, children) => <Heading_1>{children}</Heading_1>,
+      [BLOCKS.HEADING_2]: (node, children) => <Heading_2>{children}</Heading_2>,
+      [BLOCKS.HEADING_3]: (node, children) => <Heading_3>{children}</Heading_3>,
+      [BLOCKS.HEADING_4]: (node, children) => <Heading_4>{children}</Heading_4>,
+      [BLOCKS.HEADING_5]: (node, children) => <Heading_5>{children}</Heading_5>,
+      [BLOCKS.HEADING_6]: (node, children) => <Heading_6>{children}</Heading_6>,
     },
-    [BLOCKS.HEADING_2]: (node, children) => <Heading_2>{children}</Heading_2>,
-    [BLOCKS.HEADING_3]: (node, children) => <Heading_3>{children}</Heading_3>,
-    [BLOCKS.HEADING_4]: (node, children) => <Heading_4>{children}</Heading_4>,
-    [BLOCKS.HEADING_5]: (node, children) => <Heading_5>{children}</Heading_5>,
-    [BLOCKS.HEADING_6]: (node, children) => <Heading_6>{children}</Heading_6>,
   };
 
   return (

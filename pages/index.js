@@ -30,7 +30,7 @@ export default function IndexPage() {
       <main>
         <Heading_1 text="Welcome to the Volcanic CMS guide!" />
 
-        <p className="mt-4 text-lg text-slate-200">
+        <p className="mt-4 text-lg text-slate-800 dark:text-slate-200">
           Please use the navigation bar to get started.
         </p>
       </main>
