@@ -19,20 +19,12 @@ a {
   box-sizing: border-box;
 }
 
-ol {
-  counter-reset: item;
+.unorderedList {
+  list-style-type: disc;
 }
 
-ol li {
-  counter-increment: item;
-}
-
-ol li::before {
-  content: counter(item);
-}
-
-ol > li:last-child:after {
-  background: none !important;
+.orderedList {
+  list-style-type: decimal;
 }
 
 ::-moz-selection {
