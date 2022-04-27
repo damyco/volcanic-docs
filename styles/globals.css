@@ -18,3 +18,30 @@ a {
 * {
   box-sizing: border-box;
 }
+
+ol {
+  counter-reset: item;
+}
+
+ol li {
+  counter-increment: item;
+}
+
+ol li::before {
+  content: counter(item);
+}
+
+ol > li:last-child:after {
+  background: none !important;
+}
+
+::-moz-selection {
+  /* Firefox */
+  color: #fff;
+  background: #38bdf8;
+}
+
+::selection {
+  color: #fff;
+  background: #38bdf8;
+}
