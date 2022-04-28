@@ -2,7 +2,7 @@ import NavLink from "./NavLink";
 
 export default function SideNav({ data }) {
   return (
-    <div className="flex fixed z-20 inset-0 top-[5rem] right-auto w-[19.5rem] pb-10 px-8 overflow-y-auto">
+    <div className="flex fixed z-20 inset-0 top-[5rem] right-auto w-[19.5rem] pb-10 px-8 mb-2 overflow-y-auto">
       <nav className="lg:text-sm lg:leading-6 relative">
         {data.navigationCollection.items[0].navigationGroupsCollection.items.map(
           (item) => {
