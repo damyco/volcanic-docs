@@ -27,7 +27,7 @@ export default function PageSection({ heading, body }) {
           (i) => i.sys.id === node.data.target.sys.id
         );
         return (
-          <picture>
+          <div className="my-1">
             <Image
               key={img?.sys.id}
               src={img?.url}
@@ -36,7 +36,7 @@ export default function PageSection({ heading, body }) {
               height={img?.height}
               loading="lazy"
             />
-          </picture>
+          </div>
         );
       },
       [BLOCKS.PARAGRAPH]: (node, children) => (
