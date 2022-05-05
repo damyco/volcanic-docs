@@ -21,7 +21,7 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
           (i) => i.sys.id === node.data.target.sys.id
         );
         return (
-          <div className="my-1">
+          <div className="my-2 shadow-md">
             <Image
               key={img?.sys.id}
               src={img?.url}
