@@ -21,7 +21,7 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
           (i) => i.sys.id === node.data.target.sys.id
         );
         return (
-          <picture>
+          <div className="my-1">
             <Image
               key={img?.sys.id}
               src={img?.url}
@@ -30,7 +30,7 @@ export default function PageHeader({ title, headerHeadline, headerBody }) {
               height={img?.height}
               loading="lazy"
             />
-          </picture>
+          </div>
         );
       },
       [BLOCKS.HEADING_1]: (node, children) => <Heading_1>{children}</Heading_1>,
