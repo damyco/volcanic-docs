@@ -21,4 +21,5 @@ export default function SideNav({ data }) {
       </nav>
     </div>
   );
+
 }
